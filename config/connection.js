@@ -9,7 +9,7 @@ This makes our code a lot more cleaner.
 
 module.exports = () => {
  config(); //invoking the dotenv config here
- const uri = process.env.DB_URI;
+ const uri = process.env.MONGODB_URI;
 
  connect(uri, {
         dbName: process.env.DB_NAME,
