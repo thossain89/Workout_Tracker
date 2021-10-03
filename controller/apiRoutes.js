@@ -34,7 +34,7 @@ router.get("/workouts/range", (req, res) => {
 router.post("/workouts", (req, res) => {
   db.Workout.create(req.body)
     .then((workout) => {
-      res.status(201).json(workout);
+      res.status(200).json(workout);
     })
     .catch((e) => {
       res.status(400).json(e);
