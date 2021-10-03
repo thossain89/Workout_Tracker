@@ -21,8 +21,7 @@ router.get("/workouts/range", (req, res) => {
       totalDuration:{$sum: "$exercises.duration"}
     }
   },
-  {$sort: {day: -1}}, 
-        {$limit: 7},
+  {$sort: {day: -1}}         
 ])    
     .then((workout) => {
       res.status(200).json(workout);
