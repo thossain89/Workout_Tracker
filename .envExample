@@ -1,4 +1,1 @@
 MONGODB_URI = mongodb://localhost/workout'
-DB_NAME = workout
-DB_USER = <your_username>
-DB_PASSWORD = <your_password>
