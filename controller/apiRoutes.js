@@ -24,10 +24,11 @@ router.get('/workouts/range', (req, res) => {
         totalDuration: { $sum: '$exercises.duration' },
       },
     },
+    {$sort: {day: -1}}, 
+    {$limit: 7},
        
   ])
-    .sort({'date': -1})
-    .limit(7)
+    
     .then((data) => {
       res.status(200).json(data);
     })
@@ -38,7 +39,7 @@ router.get('/workouts/range', (req, res) => {
 
 router.put('/workouts/:id', (req, res) => {
   console.log (req.body);
-  db.Workout.findOneAndUpdate(
+  db.Workout.findByIdAndUpdate(
     { _id: req.params.id },
     { $push: { exercises: req.body } },
     { new: true }
